@@ -1,12 +1,26 @@
 class Course {
-   constructor({
-     name,
-     classes = [],
-   }) {
-     this.name = name;
-     this.classes = classes;
-   }
- }
+  constructor({
+    name,
+    classes = [],
+  }) {
+    this._name = name;
+    this.classes = classes;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(newName) {
+    if (newName === "Curso Errado de Programación Básica") {
+      console.error("Web... no");
+    } else {
+      this._name = newName; 
+    }
+  }
+}
+
+ cursoProgBasica.name
  
  const cursoProgBasica = new Course({
    name: "Curso Gratis de Programación Básica",
